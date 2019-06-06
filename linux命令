@@ -1,0 +1,56 @@
+查看帮助:
+	man ls
+	help cd
+操作文件目录:
+	pwd 显示当前工作目录的绝对路径
+	ls 查看当前目录所有内容信息(常用 -l -a)
+	cd path 切换目录
+	mkdir path 创建文件夹
+	rmdir path 删除空文件夹(文件夹中有内容使用 rm -rf path)
+	touch path 创建一个空文件
+	cp path newPath 拷贝一个文件到指定文件(如果是一个文件夹则 cp -rf path nPath)
+	rm path 删除文件或文件夹(如果是文件夹 选项则 -rf)
+	mv path 移动文件与目录或重命名
+	cat path 查看文件内容，是以只读的方式打开。
+	more path 指令是一个机遇vi编辑器的文本过滤器
+	less path 查看文件
+	echo xxx 输入内容到控制台
+	head path 用来显示文件的开头部分内容
+	tail path 用来显示文件尾部内容(******** tail -f /path/log.log 工作常用)
+	history 查看已经执行过的历史命令
+时间日期类:
+	date option 显示当前日期
+	cal option 查看日历
+搜索查找类:
+	find path [option] name 从指定目录向下地柜查找指定文件
+	ln path newPathName 创建软连接目录 删除软连接使用rm 如: windows左面快捷方式
+防火墙:
+systemctl status firewalld   # 查看防火墙状态
+systemctl start firewalld    # 启动防火墙
+systemctl stop firewalld     # 停止防火墙
+systemctl restart firewalld  # 重启防火墙
+
+systemctl enable firewall    # 永久开启防火墙，需要重启
+systemctl disable firewall   # 永久关闭防火墙，需要重启
+
+
+
+
+CentOS部分:
+	systemctl start firewalld   开启防火墙
+	systemctl stop firewalld    关闭防火墙  
+	systemctl status firewalld  查看防火墙状态
+	systemctl restart firewalld 重启防火墙
+
+	systemctl enble firewall   永久开启防火墙，需要重启
+	ststemctl disable firewall 永久关闭防火墙，需要重启
+
+	设置服务器只允许使用证书登录服务器:
+		1. 修改服务器中 /etc/ssh/sshd_config 中的 PasswordAuthentication
+		2. 限制root用户登录 /etc/ssh/sshd_config 中的 PermitRootLogin 
+	
+	设置子账号root权限:
+		修改 /etc/sudoers 文件 92 行root行下增加 当前账号权限
+	
+	
+
